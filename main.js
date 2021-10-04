@@ -26,6 +26,7 @@ function extractAllMatchPageLink(html) {
     let nextPageAnchor = selTool(".widget-items.cta-link a");
     let link = nextPageAnchor.attr("href");
     let fullLink = "https://www.espncricinfo.com" + link
+    // console.log(fullLink);
     allMatchobj.pam(fullLink)
 }
 function dirCreater(folderPath) {

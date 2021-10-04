@@ -78,20 +78,20 @@ function processPlayer(myTeamName, name, venue, date, opponentTeamName, result, 
     // team folder -> exist
     // does not exist   
     let folderPath = path.join(__dirname, "ipl", myTeamName);
-    // dirCreater(folderPath);
+    dirCreater(folderPath);
     // // file -> read data update -> write
     // // create -> write
-    // // let filePath = path.join(folderPath, name + ".json");
-    // let filePath = path.join(folderPath, name + ".xlsx");
+    // let filePath = path.join(folderPath, name + ".json");
+    let filePath = path.join(folderPath, name + ".xlsx");
     // // [],[{},{}]
-    // let content = excelReader(filePath, name);
-    // let matchobj = {
-    //     myTeamName, name, venue, date,
-    //     opponentTeamName, result, runs, balls, fours, sixes, sr
-    // }
+    let content = excelReader(filePath, name);
+    let matchobj = {
+        myTeamName, name, venue, date,
+        opponentTeamName, result, runs, balls, fours, sixes, sr
+    }
 
-    // content.push(matchobj);
-    // excelWriter(filePath, content, name);
+    content.push(matchobj);
+    excelWriter(filePath, content, name);
     // if (fs.existsSync(filePath)) {
     //     let buffer = fs.readFileSync(filePath);
     //     content = JSON.parse(buffer);
